@@ -32,5 +32,4 @@ if(regex.test(username.value)){
 else{
 	alert("Invalid username");
 }
-
 }//End Of loginUservalidate

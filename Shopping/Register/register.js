@@ -20,14 +20,14 @@ function regValidate(){
 
 //Setting Regular Expression for first name
 var fNameRegex=/^[a-zA-Z.]{2,30}$/;
-var isError=false;
+var isCorrect=false;
 if(fNameRegex.test(firstName)){
 	document.getElementById("fNameerror").innerHTML="";
-	isError=true;
+	isCorrect=true;
 }
 else{
 	document.getElementById("fNameerror").innerHTML="**Invalid First Name";
-	isError= false;
+	isCorrect= false;
 }
 
 
@@ -35,11 +35,11 @@ else{
 var mNameRegex=/^[a-zA-Z.]{2,30}$/;
 if((mNameRegex.test(middleName)) || (middleName.trim()=="")){
 	document.getElementById("mNameerror").innerHTML="";
-	isError= true;
+	isCorrect= true;
 }
-else{
+else{																																				
 	document.getElementById("mNameerror").innerHTML="**Invalid Middle Name";
-	isError= false;
+	isCorrect= false;
 }
 
 
@@ -47,24 +47,24 @@ else{
 var lNameRegex=/^[a-zA-Z.]{2,30}$/;
 if(lNameRegex.test(lastName)){
 	document.getElementById("lNameerror").innerHTML="";
-	isError= true;
+	isCorrect= true;
 }
 else{
 	document.getElementById("lNameerror").innerHTML="**Invalid Last Name";
-	isError= false;
+	isCorrect= false;
 }
 
 
 
 //Setting Regular Expression for email
-var emailRegex=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+var emailRegex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 if(emailRegex.test(email)){
 	document.getElementById("emailError").innerHTML="";
-	isError= true;
+	isCorrect= true;
 }
 else{
 	document.getElementById("emailError").innerHTML="**Invalid Email ID";
-	isError= false;
+	isCorrect= false;
 }
 
 
@@ -73,55 +73,58 @@ else{
 var mobileRegex= /^[6-9][0-9]{9}$/;
 if(mobileRegex.test(mobNo)){
 	document.getElementById("moberror").innerHTML="";
-	isError= true;
+	isCorrect= true;
 }
 else{
 	document.getElementById("moberror").innerHTML="**Invalid Mobile no";
-	isError= false;
+	isCorrect= false;
 }
 
 
 
 //Setting Regular Expression for ZIP
-var zipRegex= /^(\d{4})$/;
+var zipRegex=  /^\d{5}$|^\d{5}-\d{4}$/;
 if(zipRegex.test(zip)){
 	document.getElementById("ziperror").innerHTML="";
-	isError= true;
+	isCorrect= true;
 }
 else{
 	document.getElementById("ziperror").innerHTML="**Invalid Pin Code";
-	isError= false;
+	isCorrect= false;
 }
 
 
 
 //Setting Regular Expression for password
-var passwordRegex=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8}$/;
+var passwordRegex=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8-25}$/;
 if(passwordRegex.test(password)){
 	document.getElementById("passworderror").innerHTML="";
 	if (password==confirmPassword) {
 	document.getElementById("confpassworderror").innerHTML="";
-	isError=true;
+	isCorrect=true;
 }
 else{
 	document.getElementById("confpassworderror").innerHTML="Password doesnt match";
-	 isError=false;
+	 isCorrect=false;
 }
 }
 else{
 	document.getElementById("passworderror").innerHTML="**Invalid Password";
-	isError= false;
+	isCorrect= false;
 }
 
+if (isCorrect==true) {
 
-return isError;
+	alert("Successfully registered , Login to continue");
+}
+return isCorrect;
 
 }//End of Function regValidate
 
 function years(){
 
 	var today=new Date();
-	var date=today.setFullYear(today.getFullYear()-15);
+	var date=today.setFullYear(today.getFullYear()-15); 
 	var newDate=new Date(date);
 	console.log(newDate)
 	var mnth=("0"+(newDate.getMonth()+1)).slice(-2),

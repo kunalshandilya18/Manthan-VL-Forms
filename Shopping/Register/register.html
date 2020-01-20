@@ -14,11 +14,11 @@
 	<h1 class="text-center bg-dark text-white">Shop-cart Registration</h1>
 	<div class="form-details">
 
-        <!-- Form Tag Start -->
+		<!-- Form Tag Start  -- >
 		<form  onsubmit="return regValidate()" action="file:///C:/Users/kunal/Downloads/Shopping-20191227T042620Z-001/Shopping/login/login.html">
 
 
-		<!-- Basic Information -->
+			<!-- Basic Information -->
 			<div>
 				<h4>Basic Information:</h4>
 				<label>First Name &nbsp<span style="color:red">*</span></label>
@@ -58,49 +58,46 @@
 					<span style="padding-left:410px;" id="moberror" class="text-danger font-weight"></span>
 				</div>
 				<h6>Address: &nbsp<span style="color:red">*</span></h6>
-				<select class="select-country" id="country" required="">
-					<option disabled selected>Select Country </option>
-					<option>India</option>
-					<option>USA</option>
-				</select>
-				<select class="select-state" id="state" required="">
-					<option disabled selected>Select State </option>
-					<option>India</option>
-					<option>USA</option>
-				</select>
-				<select class="select-city" id="city" required="">
-					<option disabled selected>Select City</option>
-					<option>India</option>
-					<option>USA</option>
-				</select><br><br>
-				<input type="text" name="" class="house-no"  placeholder="House/Flat Number" id="houseno" required="">
-				<span id="Housenoerror" class="text-danger font-weight"></span>
-				<input type="text" name="" class="street"  placeholder="Street Name" id="street" required="">
-				<span id="streeterror" class="text-danger font-weight"></span>
-				<label class="zip">ZIP&nbsp<span style="color:red">*</span></label>
-				<input type="number" name="" id="zip" required="">
-				<span id="ziperror" class="text-danger font-weight"></span>
-			</div>
-			<br><br>
-
-			<!-- Password Validation -->
-			<div class="password">
-				<h4>Create Password:</h4>
-				<label>Password &nbsp<span style="color:red">*</span></label>
-				<input type="password" name="" class="create-password" placeholder="Enter Password" id="password" required="">
-				
-				<label>Confirm Password &nbsp<span style="color:red">*</span></label>
-				<input type="password" name="" class="confirm-password" placeholder="Confirm Password" id="confirmpassword" required=""><br>
-				
-				<p>*Password must contains 8 characters and atleast one special character and one numeric value</p><br>
 				<div>
-					<span id="passworderror" class="text-danger font-weight"></span>
-					<span style="padding-left:300px;" id="confpassworderror" class="text-danger font-weight"></span>
+					<script type= "text/javascript" src = "countries.js"></script> 
+					<select id="country" name ="country" required="" ></select> 
+					<select name ="state" id ="state" required=""></select>  
+					City<input type="text" name="" required=""><br><br>
+					<input type="text" name="" class="house-no"  placeholder="House/Flat Number" id="houseno" required="">
+					<span id="Housenoerror" class="text-danger font-weight"></span>
+					<input type="text" name="" class="street"  placeholder="Street Name" id="street" 	required="">
+					<span id="streeterror" class="text-danger font-weight"></span>
+					<label class="zip">ZIP&nbsp<span style="color:red">*</span></label>
+					<input type="number" name="" id="zip" required="">
+					<span id="ziperror" class="text-danger font-weight"></span>
+					<br><br>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+
+				<script language="javascript">
+				populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+				//populateCountries("country2");
+			</script>
+
+		</div>
+
+		<!-- Password Validation -->
+		<div class="password">
+			<h4>Create Password:</h4>
+			<label>Password &nbsp<span style="color:red">*</span></label>
+			<input type="password" name="" class="create-password" placeholder="Enter Password" id="password" required="">
+
+			<label>Confirm Password &nbsp<span style="color:red">*</span></label>
+			<input type="password" name="" class="confirm-password" placeholder="Confirm Password" id="confirmpassword" required=""><br>
+
+			<p>*Password must contains 8 characters and atleast one special character and one numeric value</p><br>
+			<div>
+				<span id="passworderror" class="text-danger font-weight"></span>
+				<span style="padding-left:300px;" id="confpassworderror" class="text-danger font-weight"></span>
 			</div>
-		</form>
-	</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+</div>
 
 </body>
 </html>
