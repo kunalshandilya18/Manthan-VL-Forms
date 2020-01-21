@@ -1,0 +1,56 @@
+body {
+	background-color: lightgray;
+}
+.basic-details {
+	width: 2800px;
+}
+.form-details {
+	margin-left: 20px;
+}
+.first-name {
+	width: 300px;
+}
+.middle-name {
+	width: 300px;
+}
+.last-name {
+	width: 300px;
+}
+.email {
+	width: 300px;
+}
+.mobile-no {
+	width: 300px;
+}
+.select-code {
+	height: 29px;
+}
+.select-state {
+	margin-left: 20px;
+}
+.select-city {
+	margin-left: 20px;
+}
+.house-no {
+	width: 300px;
+}
+.street {
+	width: 600px;
+	margin-left: 20px;
+}
+.zip {
+	margin-left: 20px;
+}
+
+.create-password {
+	width: 300px;
+}
+.confirm-password {
+	width: 300px;
+}
+div p {
+	color: red;
+}
+.error-message {
+	padding-left: 410px;
+}
